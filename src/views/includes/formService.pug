@@ -1,0 +1,26 @@
+
+div.m-4(style="max-width: 75%;")
+    form#form
+        div.form-group
+            label Nom du service
+            input.form-control(type='text' name='name')
+
+        div.form-group
+            label Description
+            textarea.form-control(name='description')
+
+        div.form-group
+            label Date
+            input.form-control(type="date" name='date')
+
+        br
+        div.form-group
+            input.form-control(type="submit" name='submit' value="Ajouter")
+
+    div.error
+        ul#list
+
+script.
+    fetchPage='/createService';
+
+script(src='/js/fetchForm.js')

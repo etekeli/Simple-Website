@@ -1,0 +1,15 @@
+extends index
+
+block main
+    main.mx-5
+        if(succes)
+            div.alert.alert-success= succes
+
+        else if(error)
+            div.alert.alert-danger= error
+
+        else
+            div.alert.alert-dark Erreur lors de la suppression du service
+
+        a(href="/dashboard")
+            button.btn.btn-primary Retour au dashboard

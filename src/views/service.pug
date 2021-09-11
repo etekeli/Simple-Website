@@ -1,0 +1,11 @@
+mixin service(serv, user)
+	if serv
+		div.card
+			div.card-body
+				h5.card-title #{serv.name}
+				p.card-text #{serv.description}
+				a.btn.btn-primary(href='#') Voir
+				if(user)
+					a.btn.btn-danger.mx-2(href="/deleteService/"+serv.id) Supprimer
+	else
+		h1.h3.mb-3.fw-normal Nous n'avons pas trouvé ce service, il n'existe peut-être plus...

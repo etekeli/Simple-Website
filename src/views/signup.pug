@@ -1,0 +1,33 @@
+extends index
+
+block body
+    .text-center
+    main.form-signin
+        form#form(method='POST' action='/signup')
+            h1.h3.mb-3.fw-normal Inscription
+
+            label.visually-hidden(for="inputFirstName") Pseudo
+            input.form-control#login(type="text" placeholder="Pseudonyme" name="login" required="required")
+
+            label.visually-hidden(for="inputLastName") Nom
+            input.form-control#inputLastName(type="text" placeholder="Nom" name="lastName" required="required")
+
+            label.visually-hidden(for="inputFirstName") Prénom
+            input.form-control#inputFirstName(type="text" placeholder="Prénom" name="firstName" required="required")
+
+            label.visually-hidden(for="inputPassword") Mot de passe
+            input.form-control#inputPassword(type="password" name="password" placeholder="Mot de passe" required="required")
+
+            label.visually-hidden(for="inputRepeatPassword") Confirmez votre mot de passe
+            input.form-control#inputRepeatPassword(type="password" name="repeatPassword" placeholder="Confirmez votre mot de passe" required="required")
+
+            input.w-100.btn-lg.btn-primary(type="submit" id="sender" value="Envoyer")
+
+        div.error
+            ul#list
+
+    script.
+        fetchPage="/signup";
+
+    script(src='/js/fetchForm.js')
+

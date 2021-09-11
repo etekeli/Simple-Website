@@ -1,0 +1,29 @@
+include service
+doctype html
+html
+    head
+        title Super services !
+        link(rel='stylesheet', type='text/css', href='/bootstrap5/css/bootstrap.css')
+        script(src='/bootstrap5/js/bootstrap.js')
+
+        if(page_name === "signin" || page_name === "signup")
+            link(rel='stylesheet', type='text/css', href='/css/signin.css')
+    block body
+        block nav
+            ul.nav.justify-content-end
+                li.nav-item
+                    a.nav-link(href='/', class=(page_name === "signout" ? "active" : undefined)) Accueil
+
+                if(session.login)
+                    li.nav-item
+                        a.nav-link(href='/dashboard', class=(page_name === "dashboard" ? "active" : undefined)) Dashboard
+                    li.nav-item
+                        a.nav-link(href='/signout', class=(page_name === "signout" ? "active" : undefined)) Se déconnecter
+                else
+                    li.nav-item
+                        a.nav-link(href="/signin", class=(page_name === "signin" ? "active" : undefined)) Se connecter
+
+                    li.nav-item
+                        a.nav-link(href='/signup', class=(page_name === "signup" ? "active" : undefined)) Créer un compte
+        block main
+

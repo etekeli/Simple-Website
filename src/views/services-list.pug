@@ -1,0 +1,12 @@
+extends index
+
+block main
+	main.mx-5
+		if services
+			h1.h3.fw-normal Liste des services
+			ul.list-group
+				each serv in services
+					+service(serv)
+					br
+		else
+			h1.h3.mb-3.fw-normal Aucun service demandé n'a été trouvé

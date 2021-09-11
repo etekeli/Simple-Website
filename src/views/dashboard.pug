@@ -1,0 +1,13 @@
+extends index
+
+block main
+    main.mx-5
+        if services
+            h1 Vos Services
+            div
+                ul.list-group
+                    each val in services
+                        li.mx-5
+                            +service(val, user)
+
+        include includes/formService
